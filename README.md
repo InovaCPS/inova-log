@@ -60,3 +60,19 @@ Updating "pip" tool
     pyb
     twine upload -r pypi <path and name of the package tar.gz created into the TARGET folder>
     ```
+* Run the project
+    * Execute:
+    ```bash
+    ./runserver.sh
+    ```
+    * To test the project, access the URL _http://localhost:8080/log_. The response will be:
+    ```json
+    {
+        "message": "Log queried with success",
+        "system": "pyetl-inova",
+        "source_host": "172.45.67.89",
+        "target_host": "192.168.9.2",
+        "datetime": "2018-08-06 01:37:23.327827"
+    }
+    ```
+   

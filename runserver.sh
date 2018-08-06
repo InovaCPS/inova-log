@@ -3,6 +3,8 @@
 #   This script will run the main application file in debug mode.
 #
 #   author: Michael Gruber
+#
+#   Adapted by Lucas Nadalete
 
 from sys import path
 
