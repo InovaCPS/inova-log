@@ -57,6 +57,6 @@ Updating "pip" tool
 * Uploading the project do PyPi respository
     ```bash
     pip install twine
-    pyb`
+    pyb
     twine upload -r pypi <path and name of the package tar.gz created into the TARGET folder>
-    ``
+    ```
