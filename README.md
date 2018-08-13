@@ -60,6 +60,20 @@ Updating "pip" tool
     pyb
     twine upload -r pypi <path and name of the package tar.gz created into the TARGET folder>
     ```
+* Creating the project database
+    * Pre-requirements (software)
+        * Maven
+        * JDK 1.8+
+        * PostgreSQL Server - [Docker Postgres](https://hub.docker.com/_/postgres/)
+    * Execute the follow command
+        * Create database
+         ```bash
+         mvn clean resources:resources liquibase:update
+         ```
+         * Clean all database
+         ```bash
+          mvn clean resources:resources liquibase:dropAll
+         ```   
 * Run the project
     * Execute:
     ```bash
