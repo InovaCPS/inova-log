@@ -9,6 +9,8 @@
     Log entity
 """
 
+from datetime import datetime
+
 from sqlalchemy.exc import SQLAlchemyError
 
 from model.log import Log
@@ -23,7 +25,7 @@ class LogRepository:
             entity = Log(un=data['user_name'],
                          th=data['target_host'],
                          sh=data['source_host'],
-                         cdt=data['created_datetime'],
+                         cdt=datetime.strptime(data['created_datetime'], '%Y-%m-%d %H:%M:%S'),
                          au=data['api_url'],
                          )
             db.session.add(entity)
@@ -31,7 +33,7 @@ class LogRepository:
                 db.session.commit()
             except SQLAlchemyError:
                 return None
-            return entity.id
+            return entity
 
     @staticmethod
     def get_all():

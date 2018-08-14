@@ -89,4 +89,21 @@ Updating "pip" tool
         "datetime": "2018-08-06 01:37:23.327827"
     }
     ```
+* Endpoints:
+    ```json
+    GET - Query all log register
+    http://localhost:8080/log
+
+    POST - Save a new log register
+    http://localhost:8080/log
+    
+    {
+        "user_name": "username1",
+        "created_datetime": "yyyy-MM-dd hh:mm:ss",
+        "source_host": "192.168.0.140",
+        "target_host": "10.15.16.78",
+        "api_url": "https://host/context"
+    }
+  
+    ```
    

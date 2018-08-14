@@ -12,6 +12,9 @@
 
 from datetime import datetime
 
+from model.log import Log
+
+
 class LogMapper:
 
     @staticmethod
@@ -27,8 +30,19 @@ class LogMapper:
         return log
 
     @staticmethod
-    def map_list_to_dic(entities):
+    def map_list_to_dict(entities):
         logs = []
         for entity in entities:
             logs.append(LogMapper.map_entity_to_dict(entity))
         return logs
+
+    @staticmethod
+    def map_dict_to_entity(log_dict):
+        entity = Log(
+            log_dict['username'],
+            log_dict['source_host'],
+            log_dict['target_host'],
+            log_dict['api_url'],
+            datetime.strptime(log_dict['created_datetime'], '%Y-%m-%d %H:%M:%S')
+        )
+        return entity
